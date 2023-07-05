@@ -16,7 +16,7 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mi amor ♡'),
+        title: const Text('Mi amor ❤'),
         centerTitle: false,
         leading: const Padding(
           padding: EdgeInsets.all(5.0),
@@ -42,12 +42,13 @@ class _ChatView extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
+                controller: chatProvider.chatScrollController,
                 itemCount: chatProvider.messages.length,
                 itemBuilder: (context, index) {
                   final message = chatProvider.messages[index];
 
                   return (message.fromWho == FromWho.hers)
-                    ? const HerMessageBubble()
+                    ? HerMessageBubble(message: message)
                     : MyMessageBubble(message: message);
               }),
             ),
