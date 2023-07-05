@@ -16,7 +16,7 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mi amor ♡'),
+        title: const Text('Mi amor ❤'),
         centerTitle: false,
         leading: const Padding(
           padding: EdgeInsets.all(5.0),
